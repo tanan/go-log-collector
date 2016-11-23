@@ -26,11 +26,12 @@ func Logger(inner http.Handler, name string) http.Handler {
         q := r.URL.Query()
 
         log.Printf(
-            "%s\t%s\t%s\t%s\t%s\t%s",
+            "%s\t%s\t%s\t%s\t%s\t%s\t%s",
             r.Method,
             r.RequestURI,
             name,
             q.Get("stamp"),
+            q.Get("vis"),
             q.Get("ref"),
             time.Since(start),
         )
